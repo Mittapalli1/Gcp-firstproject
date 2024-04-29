@@ -31,14 +31,19 @@ echo "deleted instance-1b"
 gcloud compute instances delete instance-1a --zone=us-central1-a
 echo "deleted instance-1a"
 
-#delete subnet
+#delete subnet A
 gcloud compute networks subnets delete subnet-a --region=us-central1 
-echo "deleted subnets"
-
-#delete subnet 
+echo "deleted subnet-a"
+#delete subnet B
 gcloud compute networks subnets delete subnet-b --region=us-central1
-echo "deleted subnets"
+echo "deleted subnet-b"
 
-#delete network
+#delete network custom-network
 gcloud compute networks delete custom-network
-echo "custom-network"
+echo "deleted network custom-network"
+
+echo "here is the order of delete firewall >>> instances or VM's >>> subnets >>> VPC"
+
+
+
+
